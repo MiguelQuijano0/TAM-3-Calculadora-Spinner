@@ -2,6 +2,7 @@ package com.example.tam_3_calculadora_spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         spinner1 =(Spinner) findViewById(R.id.spinner);
 
         String []opciones={"Sumar","Restar","Multiplicar","Dividir","Potencia"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, opciones);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.spiner_per, opciones);
         spinner1.setAdapter(adapter);
     }
     public void operar(View view) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         int nro1=Integer.parseInt(valor1);
         int nro2=Integer.parseInt(valor2);
         String selec=spinner1.getSelectedItem().toString();
+
 
         if (selec.equals("Sumar")) {
             int suma=nro1+nro2;
